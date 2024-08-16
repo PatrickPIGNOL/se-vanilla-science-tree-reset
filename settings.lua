@@ -1,6 +1,6 @@
 data:extend({
     {
-        type = "bool-settings",
+        type = "bool-setting",
         name = "SE-vanilla-science-tree-reset-activated",
         setting_type = "startup",
         default_value = true,
