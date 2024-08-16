@@ -1,3 +1,16 @@
+data.raw.technology["electronics"].unit.ingredients={
+    {"automation-science-pack", 1},
+    {"", 1},
+}
+data.raw.technology["electronics"].unit.time = 60
+data.raw.technology["electronics"].effects = {
+    {
+        type  = "unlock-recipe",
+        recipe = "electronic-circuit"
+    }
+}
+
+
 -- local data_util = require("data_util")
 
 -- data_util.tech_
