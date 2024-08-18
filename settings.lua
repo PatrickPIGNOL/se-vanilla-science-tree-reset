@@ -4,7 +4,7 @@ data:extend({
         name = "SE-vanilla-science-tree-reset-activated",
         setting_type = "startup",
         default_value = true,
-        order="a",
+        order="a"
     }
 })
 

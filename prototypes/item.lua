@@ -8,6 +8,7 @@ if data.raw.item["electronic-circuit"] and data.raw.item["electronic-circuit"].s
     data.raw.item["electronic-circuit"].stack_size = 200;
     data.raw.item["electronic-circuit"].type = "item";
 end
+
 -- local  coin = {
 --     type = "item",
 --     name = "novacoin",
