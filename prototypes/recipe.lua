@@ -35,21 +35,16 @@ end
 -- };
 
 --if data.raw.recipe["electronic-circuit"] and data.raw.recipe["electronic-circuit"].ingredients and data.raw.recipe["electronic-circuit"].enabled and data.raw.recipe["electronic-circuit"].results then
-  data.raw.recipe["electronic-circuit"].normal = {
-    ingredients = {
+  data.raw.recipe["electronic-circuit"].normal.ingredients = {
       {"iron-plate", 1},
-      {"copper-cable", 3},
-      result = "electronic-circuit"
-    }
+      {"copper-cable", 3} 
   };
-  data.raw.recipe["electronic-circuit"].expensive = {
-    ingredients =
-    {
+  data.raw.recipe["electronic-circuit"].normal.result = "electronic-circuit";
+  data.raw.recipe["electronic-circuit"].expensive.ingredients = {
       {"iron-plate", 2},
       {"copper-cable", 8}
-    },
-    result = "electronic-circuit"
   };
+  data.raw.recipe["electronic-circuit"].expensive.result = "electronic-circuit";
   data.raw.recipe["electronic-circuit"].ingredients = {{type="item", name="iron-plate", amount=1}, {type="item", name="copper-cable", amount=1}}
   data.raw.recipe["electronic-circuit"].hidden = false;
   data.raw.recipe["electronic-circuit"].enabled = true;
