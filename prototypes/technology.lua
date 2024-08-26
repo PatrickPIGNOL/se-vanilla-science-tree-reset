@@ -1,43 +1,32 @@
-if data.raw.technology["se-electronics"] and data.raw.technology["se-electronics"].unit and data.raw.technology["se-electronics"].unit.ingredients and data.raw.technology["se-electronics"].unit.time and data.raw.technology["se-electronics"].effects then
-data.raw.technology["se-electronics"].unit.ingredients={
-    {"automation-science-pack", 1},
-    {"logistic-science-pack", 1},
-}
-data.raw.technology["se-electronics"].unit.time = 60
-data.raw.technology["se-electronics"].effects = {
-    {
-        type  = "unlock-recipe",
-        recipe = "se-electronic-circuit"
-    }
-}
-end
 
---for _, tech in pairs(data.raw.technology) do
+local vTechnologies = {
+
+};
 
 
---if data.raw.technology["electronics"] and data.raw.technology["electronics"].unit and data.raw.technology["electronics"].unit.ingredients and data.raw.technology["electronics"].unit.time and data.raw.technology["electronics"].effects then
-
+    if settings.startup["SE-vanilla-science-tree-reset-activated"].value then
     data.raw.technology["electronics"].hidden = false;
-    if data.raw.technology["electronics"].normal then
+    if settings.startup["SE-vanilla-science-tree-reset-normal"].value then
         data.raw.technology["electronics"].normal = nil;
     end
-    if data.raw.technology["electronics"].expensive then
+    if settings.startup["SE-vanilla-science-tree-reset-expensive"].value then
         data.raw.technology["electronics"].expensive = nil
     end
     data.raw.technology["electronics"].unit.ingredients = {
         {"automation-science-pack", 1}
-    }
-    data.raw.technology["electronics"].unit.time = 60
+    };
+    data.raw.technology["electronics"].unit.time = 15;
+    data.raw.technology["electronics"].unit.count = 30;
     data.raw.technology["electronics"].effects = {};
-    data.raw.technology["electronics"].effects = {
-        {
-            type  = "unlock-recipe",
-            recipe = "electronic-circuit"
-        }
-    }
+    -- data.raw.technology["electronics"].effects = {
+    --     {
+    --         type  = "unlock-recipe",
+    --         recipe = "electronic-circuit"
+    --     }
+    -- }
     data.raw.technology["electronics"].enabled = true;
     data.raw.technology["electronics"].researched = true;
---end
+end
 -- local data_util = require("data_util")
 
 -- data_util.tech_
