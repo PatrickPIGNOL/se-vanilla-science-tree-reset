@@ -15,7 +15,7 @@ end
 --for _, tech in pairs(data.raw.technology) do
 
 
-if data.raw.technology["electronics"] and data.raw.technology["electronics"].unit and data.raw.technology["electronics"].unit.ingredients and data.raw.technology["electronics"].unit.time and data.raw.technology["electronics"].effects then
+--if data.raw.technology["electronics"] and data.raw.technology["electronics"].unit and data.raw.technology["electronics"].unit.ingredients and data.raw.technology["electronics"].unit.time and data.raw.technology["electronics"].effects then
 
     data.raw.technology["electronics"].hidden = false;
     if data.raw.technology["electronics"].normal then
@@ -36,7 +36,8 @@ if data.raw.technology["electronics"] and data.raw.technology["electronics"].uni
         }
     }
     data.raw.technology["electronics"].enabled = true;
-end
+    data.raw.technology["electronics"].researched = true;
+--end
 -- local data_util = require("data_util")
 
 -- data_util.tech_

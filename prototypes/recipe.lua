@@ -12,29 +12,29 @@ if data.raw.recipe["se-electronic-circuit"] and data.raw.recipe["se-electronic-c
   }
 end
 
-local ElectronicCircuitRecipe = {
-  type = "recipe",
-  name = "electronic-circuit",
-  normal = {
-    ingredients = {
-      {"iron-plate", 1},
-      {"copper-cable", 3}
-    },
-    result = "electronic-circuit"
-  },
-  expensive =
-  {
-    ingredients =
-    {
-      {"iron-plate", 2},
-      {"copper-cable", 8}
-    },
-    result = "electronic-circuit"
-  },
-  result_count = 1,
-};
+-- local ElectronicCircuitRecipe = {
+--   type = "recipe",
+--   name = "electronic-circuit",
+--   normal = {
+--     ingredients = {
+--       {"iron-plate", 1},
+--       {"copper-cable", 3}
+--     },
+--     result = "electronic-circuit"
+--   },
+--   expensive =
+--   {
+--     ingredients =
+--     {
+--       {"iron-plate", 2},
+--       {"copper-cable", 8}
+--     },
+--     result = "electronic-circuit"
+--   },
+--   result_count = 1,
+-- };
 
-if data.raw.recipe["electronic-circuit"] and data.raw.recipe["electronic-circuit"].ingredients and data.raw.recipe["electronic-circuit"].enabled and data.raw.recipe["electronic-circuit"].results then
+--if data.raw.recipe["electronic-circuit"] and data.raw.recipe["electronic-circuit"].ingredients and data.raw.recipe["electronic-circuit"].enabled and data.raw.recipe["electronic-circuit"].results then
   data.raw.recipe["electronic-circuit"].normal = {
     ingredients = {
       {"iron-plate", 1},
@@ -58,7 +58,7 @@ if data.raw.recipe["electronic-circuit"] and data.raw.recipe["electronic-circuit
   --data.raw.recipe["electronic-circuit"].results = {
   --  {type = "item", name = "electronic-circuit", amount = 1},
   --};
-end
+--end
 --data.raw.recipe["electronic-circuit"].normal.ingredients = {{type="item", name="iron-plate", amount=1}, {type="item", name="copper-cable", amount=1}}
 
 -- local coin = {
