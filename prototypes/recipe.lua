@@ -2833,19 +2833,27 @@ local vRecipes = {
 
 function mSetRecipe(pRecipe)
   if pRecipe.normal then
-    if settings.startup["SE-vanilla-science-tree-reset-activated"].value && settings.startup["SE-vanilla-science-tree-reset-normal"].value then
+    if settings.startup["SE-vanilla-science-tree-reset-activated"].value and settings.startup["SE-vanilla-science-tree-reset-normal"].value then
       data.raw.recipe[pRecipe.name].normal = pRecipe.normal;
       log("Recipe.normal : '"..pRecipe.name.."' treated.");
-      --data.raw.recipe[pRecipe.name].normal.ingredients = pRecipe.normal.ingredients;
-      --data.raw.recipe[pRecipe.name].normal.result = pRecipe.normal.result;
+    end
+  else
+    if settings.startup["SE-vanilla-science-tree-reset-activated"].value and settings.startup["SE-vanilla-science-tree-reset-normal"].value then
+      data.raw.recipe[pRecipe.name].normal.ingredients = pRecipe.ingredients;
+      data.raw.recipe[pRecipe.name].normal.result = pRecipe.result;
+      log("Recipe.normal : '"..pRecipe.name.."' treated.");
     end
   end
   if pRecipe.expensive then
-    if settings.startup["SE-vanilla-science-tree-reset-activated"].value && settings.startup["SE-vanilla-science-tree-reset-expensive"].value then
+    if settings.startup["SE-vanilla-science-tree-reset-activated"].value and settings.startup["SE-vanilla-science-tree-reset-expensive"].value then
       data.raw.recipe[pRecipe.name].expensive = pRecipe.expensive;
       log("Recipe.expensive : '"..pRecipe.name.."' treated.");
-      --data.raw.recipe[pRecipe.name].expensive.ingredients = pRecipe.expensive.ingredients;
-      --data.raw.recipe[pRecipe.name].expensive.result = pRecipe.expensive.result;
+    end
+  else
+    if settings.startup["SE-vanilla-science-tree-reset-activated"].value and settings.startup["SE-vanilla-science-tree-reset-expensive"].value then
+      data.raw.recipe[pRecipe.name].expensive.ingredients = pRecipe.ingredients;
+      data.raw.recipe[pRecipe.name].expensive.result = pRecipe.result;
+      log("Recipe.expensive : '"..pRecipe.name.."' treated.");
     end
   end
   data.raw.recipe[pRecipe.name].ingredients = pRecipe.ingredients;
