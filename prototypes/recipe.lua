@@ -2832,38 +2832,48 @@ local vRecipes = {
 }
 
 function mSetRecipe(pRecipe)
-  if pRecipe.normal then
-    if settings.startup["SE-vanilla-science-tree-reset-activated"].value and settings.startup["SE-vanilla-science-tree-reset-normal"].value then
-      data.raw.recipe[pRecipe.name].normal = pRecipe.normal;
-      log("Recipe.normal : '"..pRecipe.name.."' treated.");
-    end
-  else
-    if settings.startup["SE-vanilla-science-tree-reset-activated"].value and settings.startup["SE-vanilla-science-tree-reset-normal"].value then
-      data.raw.recipe[pRecipe.name].normal.ingredients = pRecipe.ingredients;
-      data.raw.recipe[pRecipe.name].normal.result = pRecipe.result;
-      log("Recipe.normal : '"..pRecipe.name.."' treated.");
-    end
-  end
-  if pRecipe.expensive then
-    if settings.startup["SE-vanilla-science-tree-reset-activated"].value and settings.startup["SE-vanilla-science-tree-reset-expensive"].value then
-      data.raw.recipe[pRecipe.name].expensive = pRecipe.expensive;
+  if settings.startup["SE-vanilla-science-tree-reset-activated"].value then
+    if settings.startup["SE-vanilla-science-tree-reset-expensive"].value then
+      if pRecipe.expensive then
+        if data.raw.recipe[pRecipe.name].expensive then
+          data.raw.recipe[pRecipe.name].expensive = pRecipe.expensive;
+        else
+          data.raw.recipe[pRecipe.name].ingredients = pRecipe.expensive.ingredients;
+          data.raw.recipe[pRecipe.name].result = pRecipe.expensive.result;
+        end
+      else
+        if data.raw.recipe[pRecipe.name].expensive then
+          data.raw.recipe[pRecipe.name].expensive.ingredients = pRecipe.ingredients;
+          data.raw.recipe[pRecipe.name].expensive.result = pRecipe.result;
+        end
+      end
       log("Recipe.expensive : '"..pRecipe.name.."' treated.");
     end
-  else
-    if settings.startup["SE-vanilla-science-tree-reset-activated"].value and settings.startup["SE-vanilla-science-tree-reset-expensive"].value then
-      data.raw.recipe[pRecipe.name].expensive.ingredients = pRecipe.ingredients;
-      data.raw.recipe[pRecipe.name].expensive.result = pRecipe.result;
-      log("Recipe.expensive : '"..pRecipe.name.."' treated.");
+    if settings.startup["SE-vanilla-science-tree-reset-normal"].value then 
+      if pRecipe.normal then
+        if data.raw.recipe[pRecipe.name].normal then
+          data.raw.recipe[pRecipe.name].normal = pRecipe.normal;
+        else
+          data.raw.recipe[pRecipe.name].ingredients = pRecipe.normal.ingredients;
+          data.raw.recipe[pRecipe.name].result = pRecipe.normal.result;
+        end
+      else
+        if data.raw.recipe[pRecipe.name].normal then
+          data.raw.recipe[pRecipe.name].normal.ingredients = pRecipe.ingredients;
+          data.raw.recipe[pRecipe.name].normal.result = pRecipe.result;
+        end
+      end
+      log("Recipe.normal : '"..pRecipe.name.."' treated.");
     end
+    data.raw.recipe[pRecipe.name].ingredients = pRecipe.ingredients;
+    data.raw.recipe[pRecipe.name].hidden = pRecipe.hidden;
+    data.raw.recipe[pRecipe.name].enabled = pRecipe.enabled;
+    data.raw.recipe[pRecipe.name].energy_required = pRecipe.energy_required;
+    data.raw.recipe[pRecipe.name].result = pRecipe.result;
+    data.raw.recipe[pRecipe.name].result_count = pRecipe.result_count;
+    data.raw.recipe[pRecipe.name].results = pRecipe.results;
+    log("Recipe : '"..pRecipe.name.."' treated.");  
   end
-  data.raw.recipe[pRecipe.name].ingredients = pRecipe.ingredients;
-  data.raw.recipe[pRecipe.name].hidden = pRecipe.hidden;
-  data.raw.recipe[pRecipe.name].enabled = pRecipe.enabled;
-  data.raw.recipe[pRecipe.name].energy_required = pRecipe.energy_required;
-  data.raw.recipe[pRecipe.name].result = pRecipe.result;
-  data.raw.recipe[pRecipe.name].result_count = pRecipe.result_count;
-  data.raw.recipe[pRecipe.name].results = pRecipe.results;
-  log("Recipe : '"..pRecipe.name.."' treated.");  
 end
 
 if settings.startup["SE-vanilla-science-tree-reset-activated"].value then
