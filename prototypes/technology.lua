@@ -1566,7 +1566,6 @@ local vTechnologies = {
         },
         time = 60
       },
-      max_level = "infinite",
       order = "e-k-d"
     },
     {
@@ -1600,7 +1599,6 @@ local vTechnologies = {
         },
         time = 60
       },
-      max_level = "infinite",
       order = "e-k-k"
     }
 };
