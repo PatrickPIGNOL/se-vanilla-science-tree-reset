@@ -2876,11 +2876,15 @@ function mSetRecipe(pRecipe)
         log("SE-vanilla-science-tree-reset-normal : false");
     end
     if (pRecipe.icon) then
+        data.raw.recipe[pRecipe.name].icons = {
+          {
+            icon = pRecipe.icon,
+            icon_size = pRecipe.icon_size
+          },
+        };
         data.raw.recipe[pRecipe.name].icon = pRecipe.icon;        
-        log(pRecipe.name.." icon changed to : "..pRecipe.icon);
-    end
-    if (pRecipe.icon_size) then
         data.raw.recipe[pRecipe.name].icon_size = pRecipe.icon_size;
+        log(pRecipe.name.." icon changed to : "..pRecipe.icon);
     end
     if (pRecipe.category) then
         data.raw.recipe[pRecipe.name].category = pRecipe.category;
