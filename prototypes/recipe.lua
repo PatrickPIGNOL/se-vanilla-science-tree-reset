@@ -762,6 +762,8 @@ local vRecipes = {
     {
       type = "recipe",
       name = "electronic-circuit",
+      icon = "__base__/graphics/icons/electronic-circuit.png",
+      icon_size = 64, icon_mipmaps = 4,
       normal =
       {
         ingredients =
@@ -2132,6 +2134,8 @@ local vRecipes = {
       name = "production-science-pack",
       enabled = false,
       energy_required = 21,
+      icon = "__base__/graphics/icons/production-science-pack.png",
+      icon_size = 64, icon_mipmaps = 4,
       ingredients =
       {
       {"electric-furnace", 1},
