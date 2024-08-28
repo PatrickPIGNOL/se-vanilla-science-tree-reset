@@ -19,97 +19,6 @@ local vItems = {
       rocket_launch_product = {"space-science-pack", 1000}
     },
     {
-        type = "tool",
-        name = "automation-science-pack",
-        localised_description = {"item-description.science-pack"},
-        icon = "__base__/graphics/icons/automation-science-pack.png",
-        icon_size = 64, icon_mipmaps = 4,
-        subgroup = "science-pack",
-        order = "a[automation-science-pack]",
-        stack_size = 200,
-        durability = 1,
-        durability_description_key = "description.science-pack-remaining-amount-key",
-        durability_description_value = "description.science-pack-remaining-amount-value"
-    },
-    {
-        type = "tool",
-        name = "logistic-science-pack",
-        localised_description = {"item-description.science-pack"},
-        icon = "__base__/graphics/icons/logistic-science-pack.png",
-        icon_size = 64, icon_mipmaps = 4,
-        subgroup = "science-pack",
-        order = "b[logistic-science-pack]",
-        stack_size = 200,
-        durability = 1,
-        durability_description_key = "description.science-pack-remaining-amount-key",
-        durability_description_value = "description.science-pack-remaining-amount-value"
-    },
-    {
-        type = "tool",
-        name = "chemical-science-pack",
-        localised_description = {"item-description.science-pack"},
-        icon = "__base__/graphics/icons/chemical-science-pack.png",
-        icon_size = 64, icon_mipmaps = 4,
-        subgroup = "science-pack",
-        order = "d[chemical-science-pack]",
-        stack_size = 200,
-        durability = 1,
-        durability_description_key = "description.science-pack-remaining-amount-key",
-        durability_description_value = "description.science-pack-remaining-amount-value"
-    },
-    {
-        type = "tool",
-        name = "military-science-pack",
-        localised_description = {"item-description.science-pack"},
-        icon = "__base__/graphics/icons/military-science-pack.png",
-        icon_size = 64, icon_mipmaps = 4,
-        subgroup = "science-pack",
-        order = "c[military-science-pack]",
-        stack_size = 200,
-        durability = 1,
-        durability_description_key = "description.science-pack-remaining-amount-key",
-        durability_description_value = "description.science-pack-remaining-amount-value"
-    },
-    {
-        type = "tool",
-        name = "production-science-pack",
-        localised_description = {"item-description.science-pack"},
-        icon = "__base__/graphics/icons/production-science-pack.png",
-        icon_size = 64, icon_mipmaps = 4,
-        subgroup = "science-pack",
-        order = "e[production-science-pack]",
-        stack_size = 200,
-        durability = 1,
-        durability_description_key = "description.science-pack-remaining-amount-key",
-        durability_description_value = "description.science-pack-remaining-amount-value"
-    },
-    {
-        type = "tool",
-        name = "utility-science-pack",
-        localised_description = {"item-description.science-pack"},
-        icon = "__base__/graphics/icons/utility-science-pack.png",
-        icon_size = 64, icon_mipmaps = 4,
-        subgroup = "science-pack",
-        order = "f[utility-science-pack]",
-        stack_size = 200,
-        durability = 1,
-        durability_description_key = "description.science-pack-remaining-amount-key",
-        durability_description_value = "description.science-pack-remaining-amount-value"
-    },
-    {
-        type = "tool",
-        name = "space-science-pack",
-        icon = "__base__/graphics/icons/space-science-pack.png",
-        icon_size = 64, icon_mipmaps = 4,
-        subgroup = "science-pack",
-        order = "g[space-science-pack]",
-        stack_size = 2000,
-        durability = 1,
-        rocket_launch_product = {"raw-fish", 1},
-        durability_description_key = "description.science-pack-remaining-amount-key",
-        durability_description_value = "description.science-pack-remaining-amount-value"
-    },
-    {
       type = "item",
       name = "logistic-chest-passive-provider",
       icon = "__base__/graphics/icons/logistic-chest-passive-provider.png",
@@ -169,7 +78,108 @@ local vItems = {
       place_result = "artillery-wagon",
       stack_size = 5
     },
+    
 }
+
+local vTools = {
+  
+  {
+    type = "tool",
+    name = "automation-science-pack",
+    localised_description = {"item-description.science-pack"},
+    icon = "__base__/graphics/icons/automation-science-pack.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "science-pack",
+    order = "a[automation-science-pack]",
+    stack_size = 200,
+    durability = 1,
+    durability_description_key = "description.science-pack-remaining-amount-key",
+    durability_description_value = "description.science-pack-remaining-amount-value"
+  },
+  {
+    type = "tool",
+    name = "logistic-science-pack",
+    localised_description = {"item-description.science-pack"},
+    icon = "__base__/graphics/icons/logistic-science-pack.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "science-pack",
+    order = "b[logistic-science-pack]",
+    stack_size = 200,
+    durability = 1,
+    durability_description_key = "description.science-pack-remaining-amount-key",
+    durability_description_value = "description.science-pack-remaining-amount-value"
+  },
+  {
+    type = "tool",
+    name = "chemical-science-pack",
+    localised_description = {"item-description.science-pack"},
+    icon = "__base__/graphics/icons/chemical-science-pack.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "science-pack",
+    order = "d[chemical-science-pack]",
+    stack_size = 200,
+    durability = 1,
+    durability_description_key = "description.science-pack-remaining-amount-key",
+    durability_description_value = "description.science-pack-remaining-amount-value"
+  },
+  {
+    type = "tool",
+    name = "military-science-pack",
+    localised_description = {"item-description.science-pack"},
+    icon = "__base__/graphics/icons/military-science-pack.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "science-pack",
+    order = "c[military-science-pack]",
+    stack_size = 200,
+    durability = 1,
+    durability_description_key = "description.science-pack-remaining-amount-key",
+    durability_description_value = "description.science-pack-remaining-amount-value"
+  },
+  {
+    type = "tool",
+    name = "production-science-pack",
+    localised_description = {"item-description.science-pack"},
+    icon = "__base__/graphics/icons/production-science-pack.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "science-pack",
+    order = "e[production-science-pack]",
+    stack_size = 200,
+    durability = 1,
+    durability_description_key = "description.science-pack-remaining-amount-key",
+    durability_description_value = "description.science-pack-remaining-amount-value"
+  },
+  {
+    type = "tool",
+    name = "utility-science-pack",
+    localised_description = {"item-description.science-pack"},
+    icon = "__base__/graphics/icons/utility-science-pack.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "science-pack",
+    order = "f[utility-science-pack]",
+    stack_size = 200,
+    durability = 1,
+    durability_description_key = "description.science-pack-remaining-amount-key",
+    durability_description_value = "description.science-pack-remaining-amount-value"
+  },
+  {
+    type = "tool",
+    name = "space-science-pack",
+    icon = "__base__/graphics/icons/space-science-pack.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "science-pack",
+    order = "g[space-science-pack]",
+    stack_size = 2000,
+    durability = 1,
+    rocket_launch_product = {"raw-fish", 1},
+    durability_description_key = "description.science-pack-remaining-amount-key",
+    durability_description_value = "description.science-pack-remaining-amount-value"
+  },
+}
+
+function mSetTools(pTool)
+    data.raw.tool[pTool.name] = pTool;
+end
+
 function mSetItem(pItem)
     data.raw.item[pItem.name] = pItem;
 end
@@ -178,5 +188,9 @@ if settings.startup["SE-vanilla-science-tree-reset-activated"].value then
     for vIndex, vItem in ipairs(vItems) 
     do
         mSetItem(vItem);
+    end
+    for vIndex, vTool in ipairs(vTools) 
+    do
+        mSetTools(vTool);
     end
 end

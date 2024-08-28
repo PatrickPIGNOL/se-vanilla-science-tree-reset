@@ -960,76 +960,8 @@ local vTechnologies = {
     prerequisites = {"rocket-silo", "electric-energy-accumulators", "solar-energy"},
     order = "c-a"
   },
-  {
-    type = "technology",
-    name = "artillery",
-    icon_size = 256, icon_mipmaps = 4,
-    icon = "__base__/graphics/technology/artillery.png",
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "artillery-wagon"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "artillery-turret"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "artillery-shell"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "artillery-targeting-remote"
-      }
-    },
-    prerequisites = {"military-4", "tank"},
-    unit =
-    {
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"military-science-pack", 1},
-        {"utility-science-pack", 1}
-      },
-      time = 30,
-      count = 2000
-    },
-    order = "d-e-f"
-  },
-    {
-      type = "technology",
-      name = "artillery-shell-range-1",
-      icon_size = 256, icon_mipmaps = 4,
-      icons = util.technology_icon_constant_range("__base__/graphics/technology/artillery-range.png"),
-      effects =
-      {
-        {
-          type = "artillery-range",
-          modifier = 0.3
-        }
-      },
-      prerequisites = {"artillery", "space-science-pack"},
-      unit =
-      {
-        count_formula = "2^L*1000",
-        ingredients =
-        {
-          {"automation-science-pack", 1},
-          {"logistic-science-pack", 1},
-          {"chemical-science-pack", 1},
-          {"military-science-pack", 1},
-          {"utility-science-pack", 1},
-          {"space-science-pack", 1}
-        },
-        time = 60
-      },
-      max_level = "infinite",
-      order = "e-k-d"
-    },
+  
+    
     {
       type = "technology",
       name = "concrete",
@@ -1539,70 +1471,6 @@ local vTechnologies = {
       },
       order = "a-d-d"
     },
-    {
-      type = "technology",
-      name = "artillery-shell-range-1",
-      icon_size = 256, icon_mipmaps = 4,
-      icons = util.technology_icon_constant_range("__base__/graphics/technology/artillery-range.png"),
-      effects =
-      {
-        {
-          type = "artillery-range",
-          modifier = 0.3
-        }
-      },
-      prerequisites = {"artillery", "space-science-pack"},
-      unit =
-      {
-        count_formula = "2^L*1000",
-        ingredients =
-        {
-          {"automation-science-pack", 1},
-          {"logistic-science-pack", 1},
-          {"chemical-science-pack", 1},
-          {"military-science-pack", 1},
-          {"utility-science-pack", 1},
-          {"space-science-pack", 1}
-        },
-        time = 60
-      },
-      max_level = "infinite",
-      order = "e-k-d"
-    },
-    {
-      type = "technology",
-      name = "artillery-shell-speed-1",
-      icon_size = 256, icon_mipmaps = 4,
-      icons = util.technology_icon_constant_speed("__base__/graphics/technology/artillery-speed.png"),
-      effects =
-      {
-        {
-          type = "gun-speed",
-          ammo_category = "artillery-shell",
-          icon = "__base__/graphics/icons/artillery-shell.png",
-          icon_size = 64,
-          icon_mipmaps = 2,
-          modifier = 1
-        }
-      },
-      prerequisites = {"artillery", "space-science-pack"},
-      unit =
-      {
-        count_formula = "1000+3^(L-1)*1000",
-        ingredients =
-        {
-          {"automation-science-pack", 1},
-          {"logistic-science-pack", 1},
-          {"chemical-science-pack", 1},
-          {"military-science-pack", 1},
-          {"utility-science-pack", 1},
-          {"space-science-pack", 1}
-        },
-        time = 60
-      },
-      max_level = "infinite",
-      order = "e-k-k"
-    }
 };
 
 function mSetTechnology(pTechnology)
