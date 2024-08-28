@@ -721,6 +721,32 @@ local vTechnologies = {
   },
   {
     type = "technology",
+    name = "advanced-electronics-2",
+    icon_size = 256, icon_mipmaps = 4,
+    icon = "__base__/graphics/technology/advanced-electronics-2.png",
+    prerequisites = {"chemical-science-pack"},
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "processing-unit"
+      }
+    },
+    unit =
+    {
+      count = 300,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1}
+      },
+      time = 30
+    },
+    order = "a-d-c"
+  },
+  {
+    type = "technology",
     name = "speed-module-2",
     icon_size = 256, icon_mipmaps = 4,
     icon = "__base__/graphics/technology/speed-module-2.png",
