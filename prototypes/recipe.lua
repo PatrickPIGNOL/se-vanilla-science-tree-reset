@@ -442,7 +442,6 @@ local vRecipes = {
         quaternary = {r = 1.000, g = 0.395, b = 0.127, a = 1.000}, -- #ff6420ff
       }
     },
-
     {
       type = "recipe",
       name = "empty-barrel",
@@ -2178,7 +2177,7 @@ local vRecipes = {
       type = "recipe",
       name = "fast-loader",
       enabled = false,
-      hidden = true,
+      hidden = false,
       energy_required = 3,
       ingredients =
       {
@@ -2191,7 +2190,7 @@ local vRecipes = {
       type = "recipe",
       name = "express-loader",
       enabled = false,
-      hidden = true,
+      hidden = false,
       energy_required = 10,
       ingredients =
       {
