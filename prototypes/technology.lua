@@ -598,269 +598,6 @@ local vTechnologies = {
     },
     order = "d-d"
   },
-  
-
-  {
-    type = "technology",
-    name = "modules",
-    icon_size = 256, icon_mipmaps = 4,
-    icon = "__base__/graphics/technology/module.png",
-    prerequisites = {"advanced-electronics"},
-    unit =
-    {
-      count = 100,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1}
-      },
-      time = 30
-    },
-    order = "i-a"
-  },
-  {
-    type = "technology",
-    name = "speed-module",
-    icon_size = 256, icon_mipmaps = 4,
-    icon = "__base__/graphics/technology/speed-module-1.png",
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "speed-module"
-      }
-    },
-    prerequisites = {"modules"},
-    unit =
-    {
-      count = 50,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1}
-      },
-      time = 30
-    },
-    upgrade = true,
-    order = "i-c-a"
-  },
-  {
-    type = "technology",
-    name = "speed-module-2",
-    icon_size = 256, icon_mipmaps = 4,
-    icon = "__base__/graphics/technology/speed-module-2.png",
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "speed-module-2"
-      }
-    },
-    prerequisites = {"speed-module", "advanced-electronics-2"},
-    unit =
-    {
-      count = 75,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1}
-      },
-      time = 30
-    },
-    upgrade = true,
-    order = "i-c-b"
-  },
-  {
-    type = "technology",
-    name = "speed-module-3",
-    icon_size = 256, icon_mipmaps = 4,
-    icon = "__base__/graphics/technology/speed-module-3.png",
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "speed-module-3"
-      }
-    },
-    prerequisites = {"speed-module-2", "production-science-pack"},
-    unit =
-    {
-      count = 300,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"production-science-pack", 1}
-      },
-      time = 60
-    },
-    upgrade = true,
-    order = "i-c-c"
-  },
-  {
-    type = "technology",
-    name = "productivity-module",
-    icon_size = 256, icon_mipmaps = 4,
-    icon = "__base__/graphics/technology/productivity-module-1.png",
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "productivity-module"
-      }
-    },
-    prerequisites = {"modules"},
-    unit =
-    {
-      count = 50,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1}
-      },
-      time = 30
-    },
-    upgrade = true,
-    order = "i-e-a"
-  },
-  {
-    type = "technology",
-    name = "productivity-module-2",
-    icon_size = 256, icon_mipmaps = 4,
-    icon = "__base__/graphics/technology/productivity-module-2.png",
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "productivity-module-2"
-      }
-    },
-    prerequisites = {"productivity-module", "advanced-electronics-2"},
-    unit =
-    {
-      count = 75,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1}
-      },
-      time = 30
-    },
-    upgrade = true,
-    order = "i-e-b"
-  },
-  {
-    type = "technology",
-    name = "productivity-module-3",
-    icon_size = 256, icon_mipmaps = 4,
-    icon = "__base__/graphics/technology/productivity-module-3.png",
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "productivity-module-3"
-      }
-    },
-    prerequisites = {"productivity-module-2", "production-science-pack"},
-    unit =
-    {
-      count = 300,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"production-science-pack", 1}
-      },
-      time = 60
-    },
-    upgrade = true,
-    order = "i-e-c"
-  },
-  {
-    type = "technology",
-    name = "effectivity-module",
-    icon_size = 256, icon_mipmaps = 4,
-    icon = "__base__/graphics/technology/effectivity-module-1.png",
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "effectivity-module"
-      }
-    },
-    prerequisites = {"modules"},
-    unit =
-    {
-      count = 50,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1}
-      },
-      time = 30
-    },
-    upgrade = true,
-    order = "i-g-a"
-  },
-  {
-    type = "technology",
-    name = "effectivity-module-2",
-    icon_size = 256, icon_mipmaps = 4,
-    icon = "__base__/graphics/technology/effectivity-module-2.png",
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "effectivity-module-2"
-      }
-    },
-    prerequisites = {"effectivity-module", "advanced-electronics-2"},
-    unit =
-    {
-      count = 75,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1}
-      },
-      time = 30
-    },
-    upgrade = true,
-    order = "i-g-b"
-  },
-  {
-    type = "technology",
-    name = "effectivity-module-3",
-    icon_size = 256, icon_mipmaps = 4,
-    icon = "__base__/graphics/technology/effectivity-module-3.png",
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "effectivity-module-3"
-      }
-    },
-    prerequisites = {"effectivity-module-2", "production-science-pack"},
-    unit =
-    {
-      count = 300,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"production-science-pack", 1}
-      },
-      time = 60
-    },
-    upgrade = true,
-    order = "i-g-c"
-  },
   {
     type = "technology",
     name = "explosives",
@@ -989,32 +726,6 @@ local vTechnologies = {
       }
     },
     order = "c-i"
-  },
-  {
-    type = "technology",
-    name = "advanced-electronics-2",
-    icon_size = 256, icon_mipmaps = 4,
-    icon = "__base__/graphics/technology/advanced-electronics-2.png",
-    prerequisites = {"chemical-science-pack"},
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "processing-unit"
-      }
-    },
-    unit =
-    {
-      count = 300,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1}
-      },
-      time = 30
-    },
-    order = "a-d-c"
   },
   {
     type = "technology",
@@ -1249,8 +960,76 @@ local vTechnologies = {
     prerequisites = {"rocket-silo", "electric-energy-accumulators", "solar-energy"},
     order = "c-a"
   },
-  
-    
+  {
+    type = "technology",
+    name = "artillery",
+    icon_size = 256, icon_mipmaps = 4,
+    icon = "__base__/graphics/technology/artillery.png",
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "artillery-wagon"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "artillery-turret"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "artillery-shell"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "artillery-targeting-remote"
+      }
+    },
+    prerequisites = {"military-4", "tank"},
+    unit =
+    {
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"military-science-pack", 1},
+        {"utility-science-pack", 1}
+      },
+      time = 30,
+      count = 2000
+    },
+    order = "d-e-f"
+  },
+    {
+      type = "technology",
+      name = "artillery-shell-range-1",
+      icon_size = 256, icon_mipmaps = 4,
+      icons = util.technology_icon_constant_range("__base__/graphics/technology/artillery-range.png"),
+      effects =
+      {
+        {
+          type = "artillery-range",
+          modifier = 0.3
+        }
+      },
+      prerequisites = {"artillery", "space-science-pack"},
+      unit =
+      {
+        count_formula = "2^L*1000",
+        ingredients =
+        {
+          {"automation-science-pack", 1},
+          {"logistic-science-pack", 1},
+          {"chemical-science-pack", 1},
+          {"military-science-pack", 1},
+          {"utility-science-pack", 1},
+          {"space-science-pack", 1}
+        },
+        time = 60
+      },
+      max_level = "infinite",
+      order = "e-k-d"
+    },
     {
       type = "technology",
       name = "concrete",
@@ -1787,7 +1566,7 @@ local vTechnologies = {
         },
         time = 60
       },
-      --max_level = "infinite",
+      max_level = "infinite",
       order = "e-k-d"
     },
     {
@@ -1821,7 +1600,7 @@ local vTechnologies = {
         },
         time = 60
       },
-      --max_level = "infinite",
+      max_level = "infinite",
       order = "e-k-k"
     }
 };

@@ -2868,6 +2868,12 @@ function mSetRecipe(pRecipe)
     else
         log("SE-vanilla-science-tree-reset-normal : false");
     end
+    if (pRecipe.icon) then
+        data.raw.recipe[pRecipe.name].icon = pRecipe.icon;
+    end
+    if (pRecipe.icon_size) then
+        data.raw.recipe[pRecipe.name].icon_size = pRecipe.icon_size;
+    end
     data.raw.recipe[pRecipe.name].ingredients = pRecipe.ingredients;
     data.raw.recipe[pRecipe.name].hidden = pRecipe.hidden;
     data.raw.recipe[pRecipe.name].enabled = pRecipe.enabled;
