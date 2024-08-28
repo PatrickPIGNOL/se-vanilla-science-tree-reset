@@ -68,17 +68,19 @@ local vItems = {
       place_result = "logistic-chest-requester",
       stack_size = 50
     },
-    {
-      type = "item-with-entity-data",
-      name = "artillery-wagon",
-      icon = "__base__/graphics/icons/artillery-wagon.png",
-      icon_size = 64, icon_mipmaps = 4,
-      subgroup = "train-transport",
-      order = "a[train-system]-i[artillery-wagon]",
-      place_result = "artillery-wagon",
-      stack_size = 5
-    },
-    
+}
+
+local vItemsWithEntityData = {
+  {
+    type = "item-with-entity-data",
+    name = "artillery-wagon",
+    icon = "__base__/graphics/icons/artillery-wagon.png",
+    icon_size = 64, icon_mipmaps = 4,
+    subgroup = "train-transport",
+    order = "a[train-system]-i[artillery-wagon]",
+    place_result = "artillery-wagon",
+    stack_size = 5
+  },
 }
 
 local vTools = {
@@ -176,6 +178,10 @@ local vTools = {
   },
 }
 
+function mSetItemWithEntityData(pItemWithEntityData)
+  data.raw["item-with-entity-data"][pItemWithEntityData.name] = pItemWithEntityData;
+end
+
 function mSetTools(pTool)
     data.raw.tool[pTool.name] = pTool;
 end
@@ -188,6 +194,10 @@ if settings.startup["SE-vanilla-science-tree-reset-activated"].value then
     for vIndex, vItem in ipairs(vItems) 
     do
         mSetItem(vItem);
+    end
+    for vIndex, vItemWithEntityData in ipairs(vItemsWithEntityData) 
+    do
+        mSetItemWithEntityData(vItemWithEntityData);
     end
     for vIndex, vTool in ipairs(vTools) 
     do
