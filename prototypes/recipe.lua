@@ -2142,13 +2142,16 @@ local vRecipes = {
       {"rail", 30}
       },
       result_count = 3,
-      result = "production-science-pack"
+      result = "production-science-pack",
+      category = "crafting"
     },
     {
       type = "recipe",
       name = "utility-science-pack",
       enabled = false,
       energy_required = 21,
+      icon = "__base__/graphics/icons/utility-science-pack.png",
+      icon_size = 64, icon_mipmaps = 4,
       ingredients =
       {
         {"low-density-structure", 3},
@@ -2156,7 +2159,8 @@ local vRecipes = {
         {"flying-robot-frame", 1}
       },
       result_count = 3,
-      result = "utility-science-pack"
+      result = "utility-science-pack",
+      category = "crafting"
     },
     {
       type = "recipe",
@@ -2872,10 +2876,15 @@ function mSetRecipe(pRecipe)
         log("SE-vanilla-science-tree-reset-normal : false");
     end
     if (pRecipe.icon) then
-        data.raw.recipe[pRecipe.name].icon = pRecipe.icon;
+        data.raw.recipe[pRecipe.name].icon = pRecipe.icon;        
+        log(pRecipe.name.." icon changed to : "..pRecipe.icon);
     end
     if (pRecipe.icon_size) then
         data.raw.recipe[pRecipe.name].icon_size = pRecipe.icon_size;
+    end
+    if (pRecipe.category) then
+        data.raw.recipe[pRecipe.name].category = pRecipe.category;
+        log(pRecipe.name.." category changed to : "..pRecipe.category);
     end
     data.raw.recipe[pRecipe.name].ingredients = pRecipe.ingredients;
     data.raw.recipe[pRecipe.name].hidden = pRecipe.hidden;
