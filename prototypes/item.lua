@@ -174,7 +174,7 @@ local vTools = {
     order = "g[space-science-pack]",
     stack_size = 2000,
     durability = 1,
-    rocket_launch_product = {"raw-fish", 1},
+    rocket_launch_product = {"space-science-pack", 175},
     durability_description_key = "description.science-pack-remaining-amount-key",
     durability_description_value = "description.science-pack-remaining-amount-value"
   },
