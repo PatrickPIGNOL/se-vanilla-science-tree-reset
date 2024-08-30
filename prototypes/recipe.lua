@@ -1154,8 +1154,8 @@ local vRecipes = {
     {
       type = "recipe",
       name = "loader",
-      enabled = false,
-      hidden = true,
+      enabled = true,
+      hidden = false,
       energy_required = 1,
       ingredients =
       {
@@ -1166,6 +1166,32 @@ local vRecipes = {
         {"transport-belt", 5}
       },
       result = "loader"
+    },
+    {
+      type = "recipe",
+      name = "fast-loader",
+      enabled = true,
+      hidden = false,
+      energy_required = 3,
+      ingredients =
+      {
+        {"fast-transport-belt", 5},
+        {"loader", 1}
+      },
+      result = "fast-loader"
+    },
+    {
+      type = "recipe",
+      name = "express-loader",
+      enabled = true,
+      hidden = false,
+      energy_required = 10,
+      ingredients =
+      {
+        {"express-transport-belt", 5},
+        {"fast-loader", 1}
+      },
+      result = "express-loader"
     },
     {
       type = "recipe",
