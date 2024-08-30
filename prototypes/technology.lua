@@ -113,6 +113,7 @@ local vTechnologies = {
     },
     order = "c-a"
   },
+  
   {
     type = "technology",
     name = "logistics-2",
@@ -137,30 +138,6 @@ local vTechnologies = {
         recipe = "fast-loader"
       }
     },
-    {
-      type = "technology",
-      name = "logistics-3",
-      icon_size = 256, icon_mipmaps = 4,
-      icon = "__base__/graphics/technology/logistics-3.png",
-      effects =
-      {
-        {
-          type = "unlock-recipe",
-          recipe = "express-transport-belt"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "express-underground-belt"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "express-splitter"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "express-loader"
-        }
-      },
     prerequisites = {"logistics", "logistic-science-pack"},
     unit =
     {
@@ -173,6 +150,46 @@ local vTechnologies = {
       time = 30
     },
     order = "a-f-b"
+  }, 
+  {
+    type = "technology",
+    name = "logistics-3",
+    icon_size = 256, icon_mipmaps = 4,
+    icon = "__base__/graphics/technology/logistics-3.png",
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "express-transport-belt"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "express-underground-belt"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "express-splitter"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "express-loader"
+      }
+
+    },
+    prerequisites = {"production-science-pack", "lubricant"},
+    unit =
+    {
+      count = 300,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1}
+      },
+      time = 15
+    },
+    order = "a-f-c"
   },
   {
     type = "technology",
@@ -831,6 +848,87 @@ local vTechnologies = {
     },
     upgrade = true,
     order = "i-c-c"
+  },
+  {
+    type = "technology",
+    name = "effectivity-module",
+    icon_size = 256, icon_mipmaps = 4,
+    icon = "__base__/graphics/technology/effectivity-module-1.png",
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "effectivity-module"
+      }
+    },
+    prerequisites = {"modules"},
+    unit =
+    {
+      count = 50,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1}
+      },
+      time = 30
+    },
+    upgrade = true,
+    order = "i-g-a"
+  },
+  {
+    type = "technology",
+    name = "effectivity-module-2",
+    icon_size = 256, icon_mipmaps = 4,
+    icon = "__base__/graphics/technology/effectivity-module-2.png",
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "effectivity-module-2"
+      }
+    },
+    prerequisites = {"effectivity-module", "advanced-electronics-2"},
+    unit =
+    {
+      count = 75,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1}
+      },
+      time = 30
+    },
+    upgrade = true,
+    order = "i-g-b"
+  },
+  {
+    type = "technology",
+    name = "effectivity-module-3",
+    icon_size = 256, icon_mipmaps = 4,
+    icon = "__base__/graphics/technology/effectivity-module-3.png",
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "effectivity-module-3"
+      }
+    },
+    prerequisites = {"effectivity-module-2", "production-science-pack"},
+    unit =
+    {
+      count = 300,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1}
+      },
+      time = 60
+    },
+    upgrade = true,
+    order = "i-g-c"
   },
   {
     type = "technology",
