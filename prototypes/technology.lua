@@ -77,6 +77,10 @@ local vTechnologies = {
       {
         type = "unlock-recipe",
         recipe = "splitter"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "loader"
       }
     },
     unit =
@@ -127,8 +131,36 @@ local vTechnologies = {
       {
         type = "unlock-recipe",
         recipe = "fast-splitter"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "fast-loader"
       }
     },
+    {
+      type = "technology",
+      name = "logistics-3",
+      icon_size = 256, icon_mipmaps = 4,
+      icon = "__base__/graphics/technology/logistics-3.png",
+      effects =
+      {
+        {
+          type = "unlock-recipe",
+          recipe = "express-transport-belt"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "express-underground-belt"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "express-splitter"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "express-loader"
+        }
+      },
     prerequisites = {"logistics", "logistic-science-pack"},
     unit =
     {

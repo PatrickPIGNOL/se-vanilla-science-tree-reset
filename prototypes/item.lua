@@ -1,3 +1,52 @@
+function productivity_module_limitation()
+    return
+    {
+        "sulfuric-acid",
+        "basic-oil-processing",
+        "advanced-oil-processing",
+        "coal-liquefaction",
+        "heavy-oil-cracking",
+        "light-oil-cracking",
+        "solid-fuel-from-light-oil",
+        "solid-fuel-from-heavy-oil",
+        "solid-fuel-from-petroleum-gas",
+        "lubricant",
+        "iron-plate",
+        "copper-plate",
+        "steel-plate",
+        "stone-brick",
+        "sulfur",
+        "plastic-bar",
+        "empty-barrel",
+        "uranium-processing",
+        "copper-cable",
+        "iron-stick",
+        "iron-gear-wheel",
+        "electronic-circuit",
+        "advanced-circuit",
+        "processing-unit",
+        "engine-unit",
+        "electric-engine-unit",
+        "uranium-fuel-cell",
+        "explosives",
+        "battery",
+        "flying-robot-frame",
+        "low-density-structure",
+        "rocket-fuel",
+        "nuclear-fuel",
+        "nuclear-fuel-reprocessing",
+        "rocket-control-unit",
+        "rocket-part",
+        "automation-science-pack",
+        "logistic-science-pack",
+        "chemical-science-pack",
+        "military-science-pack",
+        "production-science-pack",
+        "utility-science-pack",
+        "kovarex-enrichment-process"
+    }
+end
+
 local vItems = {
     {
         type = "item",
@@ -7,6 +56,36 @@ local vItems = {
         subgroup = "intermediate-product",
         order = "e[electronic-circuit]",
         stack_size = 200
+    },    
+    {
+      type = "item",
+      name = "loader",
+      icon = "__base__/graphics/icons/loader.png",
+      icon_size = 64, icon_mipmaps = 4,
+      subgroup = "belt",
+      order = "d[loader]-a[basic-loader]",
+      place_result = "loader",
+      stack_size = 50
+    },
+    {
+      type = "item",
+      name = "fast-loader",
+      icon = "__base__/graphics/icons/fast-loader.png",
+      icon_size = 64, icon_mipmaps = 4,
+      subgroup = "belt",
+      order = "d[loader]-b[fast-loader]",
+      place_result = "fast-loader",
+      stack_size = 50
+    },
+    {
+      type = "item",
+      name = "express-loader",
+      icon = "__base__/graphics/icons/express-loader.png",
+      icon_size = 64, icon_mipmaps = 4,
+      subgroup = "belt",
+      order = "d[loader]-c[express-loader]",
+      place_result = "express-loader",
+      stack_size = 50
     },
     {
       type = "item",
