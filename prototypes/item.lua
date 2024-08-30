@@ -65,7 +65,9 @@ local vItems = {
       subgroup = "belt",
       order = "d[loader]-a[basic-loader]",
       place_result = "loader",
-      stack_size = 50
+      stack_size = 50,
+      hidden = false,
+      enabled = true,
     },
     {
       type = "item",
@@ -75,7 +77,9 @@ local vItems = {
       subgroup = "belt",
       order = "d[loader]-b[fast-loader]",
       place_result = "fast-loader",
-      stack_size = 50
+      stack_size = 50,
+      hidden = false,
+      enabled = true,
     },
     {
       type = "item",
@@ -85,7 +89,9 @@ local vItems = {
       subgroup = "belt",
       order = "d[loader]-c[express-loader]",
       place_result = "express-loader",
-      stack_size = 50
+      stack_size = 50,
+      hidden = false,
+      enabled = true,
     },
     {
       type = "item",
