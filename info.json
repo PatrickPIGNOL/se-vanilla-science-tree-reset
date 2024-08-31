@@ -1,11 +1,11 @@
 {
 	"name": "se_vanilla-science-tree-reset",
-	"version": "1.1.42",
+	"version": "1.1.43",
 	"title": "Space Exploration, Vanilla science tree reset",
 	"author": "Horned",
 	"contact": "horny7reaper@gmail.com",
 	"homepage": "github.com",
 	"description": "This mod recreates the vanilla version research tree before Space-Exploration changes. This is a Beta test version. Use it with caution. Updates could still be unstable sometime.",
 	"factorio_version": "1.1",
-	"dependencies": ["base >= 1.1.107", "space-exploration >= 0.6.138","space-exploration-postprocess >= 0.6.26","? aai-industry"] 
+	"dependencies": ["base >= 1.1.107", "space-exploration >= 0.6.138","space-exploration-postprocess >= 0.6.26","? aai-industry", "? deadlock-beltboxes-loaders"] 
 }
