@@ -453,19 +453,113 @@ local vModules = {
 }
 
 function mSetItemWithEntityData(pItemWithEntityData)
-  data.raw["item-with-entity-data"][pItemWithEntityData.name] = pItemWithEntityData;
+    --data.raw["item-with-entity-data"][pItemWithEntityData.name] = pItemWithEntityData;
+    data.raw["item-with-entity-data"][pItemWithEntityData.name].type = pItemWithEntityData.type;
+    if settings.startup["SE-vanilla-science-tree-reset-old-icons"].value then
+        if pItemWithEntityData.icon then
+            data.raw["item-with-entity-data"][pItemWithEntityData.name].icons = {
+                {
+                    icon = pItemWithEntityData.icon,
+                    icon_size = pItemWithEntityData.icon_size,
+                    icon_mipmaps = pItemWithEntityData.icon_mipmaps,
+                },
+            }
+            data.raw["item-with-entity-data"][pItemWithEntityData.name].icon = pItemWithEntityData.icon;
+            data.raw["item-with-entity-data"][pItemWithEntityData.name].icon_size = pItemWithEntityData.icon_size;
+            data.raw["item-with-entity-data"][pItemWithEntityData.name].icon_mipmaps = pItemWithEntityData.icon_mipmaps;
+        end
+    end
+    data.raw["item-with-entity-data"][pItemWithEntityData.name].subgroup = pItemWithEntityData.subgroup;
+    data.raw["item-with-entity-data"][pItemWithEntityData.name].order = pItemWithEntityData.order;
+    data.raw["item-with-entity-data"][pItemWithEntityData.name].place_result = pItemWithEntityData.place_result;
+    data.raw["item-with-entity-data"][pItemWithEntityData.name].stack_size = pItemWithEntityData.stack_size;
 end
 
 function mSetTools(pTool)
-    data.raw.tool[pTool.name] = pTool;
+    --data.raw.tool[pTool.name] = pTool;
+    data.raw.tool[pTool.name].type = pTool.type;
+    if settings.startup["SE-vanilla-science-tree-reset-old-icons"].value then
+        if pTool.icon then  
+            data.raw.tool[pTool.name].icons = {
+                {
+                    icon = pTool.icon,
+                    icon_size = pTool.icon_size,
+                    icon_mipmaps = pTool.icon_mipmaps,
+                },
+            };
+        end
+        data.raw.tool[pTool.name].icon = pTool.icon;
+        data.raw.tool[pTool.name].icon_size = pTool.icon_size;
+        data.raw.tool[pTool.name].icon_mipmaps = pTool.icon_mipmaps;
+    end
+    data.raw.tool[pTool.name].subgroup = pTool.subgroup;
+    data.raw.tool[pTool.name].order = pTool.order;
+    data.raw.tool[pTool.name].stack_size = pTool.stack_size;
+    data.raw.tool[pTool.name].durability = pTool.durability;
+    if pTool.rocket_launch_product then
+        data.raw.tool[pTool.name].rocket_launch_product = pTool.rocket_launch_product;
+    end
+    if pTool.durability_description_key then
+        data.raw.tool[pTool.name].durability_description_key = pTool.durability_description_key;
+        data.raw.tool[pTool.name].durability_description_value = pTool.durability_description_value;
+    end
 end
 
 function mSetItem(pItem)
-    data.raw.item[pItem.name] = pItem;
+    --data.raw.item[pItem.name] = pItem;
+    data.raw.item[pItem.name].type = pItem.type;
+    if settings.startup["SE-vanilla-science-tree-reset-old-icons"].value then
+        if pItem.icon then
+            data.raw.item[pItem.name].icons = {
+                {
+                    icon = pItem.icon,
+                    icon_size = pItem.icon_size,
+                    icon_mipmaps = pItem.icon_mipmaps
+                },
+            };
+            data.raw.item[pItem.name].icon = pItem.icon;
+            data.raw.item[pItem.name].icon_size = pItem.icon_size;
+            log(pItem.name.." icon changed to : "..pItem.icon);
+        end
+    end
+    data.raw.item[pItem.name].subgroup = pItem.subgroup;
+    data.raw.item[pItem.name].order = pItem.order;
+    if pItem.place_result then
+        data.raw.item[pItem.name].place_result = pItem.place_result;
+    end
+    data.raw.item[pItem.name].stack_size = pItem.stack_size;
+    data.raw.item[pItem.name].hidden = false;
+    data.raw.item[pItem.name].enabled = true;
 end
 
 function mSetModule(pModule)
-    data.raw.module[pModule.name] = pModule;
+    --data.raw.module[pModule.name] = pModule;
+    data.raw.module[pModule.name].type = pModule.type;
+    data.raw.module[pModule.name].localised_description = pModule.localised_description;
+    if settings.startup["SE-vanilla-science-tree-reset-old-icons"].value then
+        if pModule.icon then
+            data.raw.module[pModule.name].icons = {
+                {
+                    icon = pModule.icon,
+                    icon_size = pModule.icon_size,
+                    icon_mipmaps = pModule.icon_mipmaps,
+                },
+            };
+            data.raw.module[pModule.name].icon = pModule.icon;
+            data.raw.module[pModule.name].icon_size = pModule.icon_size;
+            data.raw.module[pModule.name].icon_mipmaps = pModule.icon_mipmaps;
+        end
+    end
+    data.raw.module[pModule.name].subgroup = pModule.subgroup;
+    data.raw.module[pModule.name].category = pModule.category;
+    data.raw.module[pModule.name].tier = pModule.tier;
+    data.raw.module[pModule.name].order = pModule.order;
+    data.raw.module[pModule.name].stack_size = pModule.stack_size;
+    data.raw.module[pModule.name].effect = pModule.effect;
+    if pModule.limitation then
+        data.raw.module[pModule.name].limitation = pModule.limitation;
+        data.raw.module[pModule.name].limitation_message_key = pModule.limitation_message_key;
+    end
 end
 
 if settings.startup["SE-vanilla-science-tree-reset-activated"].value then
@@ -486,3 +580,5 @@ if settings.startup["SE-vanilla-science-tree-reset-activated"].value then
         mSetModule(vModule);
     end
 end
+
+data.raw.lab["lab"].inputs = {"automation-science-pack", "logistic-science-pack", "chemical-science-pack", "military-science-pack", "production-science-pack", "utility-science-pack", "space-science-pack", "se-rocket-science-pack"}

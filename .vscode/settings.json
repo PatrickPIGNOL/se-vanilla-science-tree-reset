@@ -1,3 +1,6 @@
 {
-    "vscode-autosave.disableProgressNotifications": true
+    "vscode-autosave.disableProgressNotifications": true,
+    "Lua.diagnostics.disable": [
+        "lowercase-global"
+    ]
 }

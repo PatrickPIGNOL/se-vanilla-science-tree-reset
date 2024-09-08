@@ -19,6 +19,13 @@ data:extend({
         setting_type = "startup",
         default_value = true,
         order="a"
+    },
+    {
+        type = "bool-setting",
+        name = "SE-vanilla-science-tree-reset-old-icons",
+        setting_type = "startup",
+        default_value = true,
+        order="a"
     }
 })
 
