@@ -165,6 +165,33 @@ local vTechnologies = {
   },
   {
     type = "technology",
+    name = "effect-transmission",
+    icon_size = 256, icon_mipmaps = 4,
+    icon = "__base__/graphics/technology/effect-transmission.png",
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "beacon"
+      }
+    },
+    prerequisites = {"advanced-electronics-2", "production-science-pack"},
+    unit =
+    {
+      count = 75,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1}
+      },
+      time = 30
+    },
+    order = "i-i"
+  },
+  {
+    type = "technology",
     name = "low-density-structure",
     icon_size = 256, icon_mipmaps = 4,
     icon = "__base__/graphics/technology/low-density-structure.png",
@@ -174,7 +201,7 @@ local vTechnologies = {
         type = "unlock-recipe",
         recipe = "low-density-structure"
       }
-    },
+    },    
     prerequisites = {"advanced-material-processing", "chemical-science-pack"},
     unit =
     {
@@ -238,6 +265,34 @@ local vTechnologies = {
   },
   {
     type = "technology",
+    name = "automation-3",
+    icon_size = 256, icon_mipmaps = 4,
+    icon = "__base__/graphics/technology/automation-3.png",
+    localised_description = {"technology-description.automation-3"},
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "assembling-machine-3"
+      }
+    },
+    prerequisites = {"speed-module", "production-science-pack"},
+    unit =
+    {
+      count = 150,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1}
+      },
+      time = 60
+    },
+    order = "a-b-c"
+  },
+  {
+    type = "technology",
     name = "night-vision-equipment",
     icon_size = 256, icon_mipmaps = 4,
     icons = util.technology_icon_constant_equipment("__base__/graphics/technology/night-vision-equipment.png"),
@@ -277,6 +332,102 @@ local vTechnologies = {
       time = 15
     },
     order = "g-g-g"
+  },
+  {
+    type = "technology",
+    name = "heavy-armor",
+    icon_size = 256, icon_mipmaps = 4,
+    icon = "__base__/graphics/technology/heavy-armor.png",
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "heavy-armor"
+      }
+    },
+    prerequisites = {"military", "steel-processing"},
+    unit =
+    {
+      count = 30,
+      ingredients = {{"automation-science-pack", 1}},
+      time = 30
+    },
+    order = "g-a-b"
+  },
+  {
+    type = "technology",
+    name = "modular-armor",
+    icon_size = 256, icon_mipmaps = 4,
+    icon = "__base__/graphics/technology/armor-making.png",
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "modular-armor"
+      }
+    },
+    prerequisites = {"heavy-armor", "advanced-electronics"},
+    unit =
+    {
+      count = 100,
+      ingredients = {{"automation-science-pack", 1}, {"logistic-science-pack", 1}},
+      time = 30
+    },
+    order = "g-a-c"
+  },
+  {
+    type = "technology",
+    name = "power-armor",
+    icon_size = 256, icon_mipmaps = 4,
+    icon = "__base__/graphics/technology/power-armor.png",
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "power-armor"
+      }
+    },
+    prerequisites = {"modular-armor", "electric-engine", "advanced-electronics-2"},
+    unit =
+    {
+      count = 200,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1}
+      },
+      time = 30
+    },
+    order = "g-c-a"
+  },
+  {
+    type = "technology",
+    name = "power-armor-mk2",
+    icon_size = 256, icon_mipmaps = 4,
+    icon = "__base__/graphics/technology/power-armor-mk2.png",
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "power-armor-mk2"
+      }
+    },
+    prerequisites = {"power-armor", "military-4", "speed-module-2", "effectivity-module-2"},
+    unit =
+    {
+      count = 400,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"military-science-pack", 1},
+        {"utility-science-pack", 1}
+      },
+      time = 30
+    },
+    order = "g-c-b"
   },
   {
     type = "technology",
@@ -1268,46 +1419,6 @@ local vTechnologies = {
     prerequisites = {"rocket-silo", "electric-energy-accumulators", "solar-energy"},
     order = "c-a"
   },
-  {
-    type = "technology",
-    name = "artillery",
-    icon_size = 256, icon_mipmaps = 4,
-    icon = "__base__/graphics/technology/artillery.png",
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "artillery-wagon"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "artillery-turret"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "artillery-shell"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "artillery-targeting-remote"
-      }
-    },
-    prerequisites = {"military-4", "tank"},
-    unit =
-    {
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"military-science-pack", 1},
-        {"utility-science-pack", 1}
-      },
-      time = 30,
-      count = 2000
-    },
-    order = "d-e-f"
-  },
     {
       type = "technology",
       name = "artillery-shell-range-1",
@@ -1727,79 +1838,6 @@ local vTechnologies = {
     },
     {
       type = "technology",
-      name = "artillery",
-      icon_size = 256, icon_mipmaps = 4,
-      icon = "__base__/graphics/technology/artillery.png",
-      effects =
-      {
-        {
-          type = "unlock-recipe",
-          recipe = "artillery-wagon"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "artillery-turret"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "artillery-shell"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "artillery-targeting-remote"
-        }
-      },
-      prerequisites = {"military-4", "tank"},
-      unit =
-      {
-        ingredients =
-        {
-          {"automation-science-pack", 1},
-          {"logistic-science-pack", 1},
-          {"chemical-science-pack", 1},
-          {"military-science-pack", 1},
-          {"utility-science-pack", 1}
-        },
-        time = 30,
-        count = 2000
-      },
-      order = "d-e-f"
-    },
-    {
-      type = "technology",
-      name = "spidertron",
-      icon_size = 256, icon_mipmaps = 4,
-      icon = "__base__/graphics/technology/spidertron.png",
-      effects =
-      {
-        {
-          type = "unlock-recipe",
-          recipe = "spidertron"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "spidertron-remote"
-        }
-      },
-      prerequisites = {"military-4", "exoskeleton-equipment", "fusion-reactor-equipment", "rocketry", "rocket-control-unit", "effectivity-module-3" },
-      unit =
-      {
-        ingredients =
-        {
-          {"automation-science-pack", 1},
-          {"logistic-science-pack", 1},
-          {"military-science-pack", 1},
-          {"chemical-science-pack", 1},
-          {"production-science-pack", 1},
-          {"utility-science-pack", 1}
-        },
-        time = 30,
-        count = 2500
-      },
-      order = "d-e-g"
-    },
-    {
-      type = "technology",
       name = "circuit-network",
       icon_size = 256, icon_mipmaps = 4,
       icon = "__base__/graphics/technology/circuit-network.png",
@@ -2040,8 +2078,192 @@ if mods["deadlock-beltboxes-loaders"] then
       },
       order = "a-f-c"
     },
+    {
+      type = "technology",
+      name = "mining-productivity-3",
+      icon_size = 256, icon_mipmaps = 4,
+      icons = util.technology_icon_constant_productivity("__base__/graphics/technology/mining-productivity.png"),
+      effects =
+      {
+        {
+          type = "mining-drill-productivity-bonus",
+          modifier = 0.1
+        }
+      },
+      prerequisites = {"mining-productivity-2"},
+      unit =
+      {
+        count = 1000,
+        ingredients =
+        {
+          {"automation-science-pack", 1},
+          {"logistic-science-pack", 1},
+          {"chemical-science-pack", 1},
+          {"production-science-pack", 1},
+          {"utility-science-pack", 1}
+        },
+        time = 60
+      },
+      upgrade = true,
+      order = "c-k-f-e"
+    },
+    {
+      type = "technology",
+      name = "mining-productivity-4",
+      icon_size = 256, icon_mipmaps = 4,
+      icons = util.technology_icon_constant_productivity("__base__/graphics/technology/mining-productivity.png"),
+      effects =
+      {
+        {
+          type = "mining-drill-productivity-bonus",
+          modifier = 0.1
+        }
+      },
+      prerequisites = {"mining-productivity-3", "space-science-pack"},
+      unit =
+      {
+        count_formula = "2500*(L - 3)",
+        ingredients =
+        {
+          {"automation-science-pack", 1},
+          {"logistic-science-pack", 1},
+          {"chemical-science-pack", 1},
+          {"production-science-pack", 1},
+          {"utility-science-pack", 1},
+          {"space-science-pack", 1}
+        },
+        time = 60
+      },
+      max_level = "infinite",
+      upgrade = true,
+      order = "c-k-f-e"
+    },
+    {
+      type = "technology",
+      name = "artillery",
+      icon_size = 256, icon_mipmaps = 4,
+      icon = "__base__/graphics/technology/artillery.png",
+      effects =
+      {
+        {
+          type = "unlock-recipe",
+          recipe = "artillery-wagon"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "artillery-turret"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "artillery-shell"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "artillery-targeting-remote"
+        }
+      },
+      prerequisites = {"military-4", "tank"},
+      unit =
+      {
+        ingredients =
+        {
+          {"automation-science-pack", 1},
+          {"logistic-science-pack", 1},
+          {"chemical-science-pack", 1},
+          {"military-science-pack", 1},
+          {"utility-science-pack", 1}
+        },
+        time = 30,
+        count = 2000
+      },
+      order = "d-e-f"
+    },  
+    {
+      type = "technology",
+      name = "spidertron",
+      icon_size = 256, icon_mipmaps = 4,
+      icon = "__base__/graphics/technology/spidertron.png",
+      effects =
+      {
+        {
+          type = "unlock-recipe",
+          recipe = "spidertron"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "spidertron-remote"
+        }
+      },
+      prerequisites = {"military-4", "exoskeleton-equipment", "fusion-reactor-equipment", "rocketry", "rocket-control-unit", "effectivity-module-3" },
+      unit =
+      {
+        ingredients =
+        {
+          {"automation-science-pack", 1},
+          {"logistic-science-pack", 1},
+          {"military-science-pack", 1},
+          {"chemical-science-pack", 1},
+          {"production-science-pack", 1},
+          {"utility-science-pack", 1}
+        },
+        time = 30,
+        count = 2500
+      },
+      order = "d-e-g"
+    },
+    {
+      type = "technology",
+      name = "circuit-network",
+      icon_size = 256, icon_mipmaps = 4,
+      icon = "__base__/graphics/technology/circuit-network.png",
+      effects =
+      {
+        {
+          type = "unlock-recipe",
+          recipe = "red-wire"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "green-wire"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "arithmetic-combinator"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "decider-combinator"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "constant-combinator"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "power-switch"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "programmable-speaker"
+        }
+      },
+      prerequisites = {"electronics", "logistic-science-pack"},
+      unit =
+      {
+        count = 100,
+        ingredients =
+        {
+          {"automation-science-pack", 1},
+          {"logistic-science-pack", 1}
+        },
+        time = 15
+      },
+      order = "a-d-d"
+    }
   }
-  for vIndex, vLogisiticsTechnology in ipairs(vLogisiticsTechnologies) 
+
+
+for vIndex, vLogisiticsTechnology in ipairs(vLogisiticsTechnologies) 
   do
       mSetTechnology(vLogisiticsTechnology);
   end
