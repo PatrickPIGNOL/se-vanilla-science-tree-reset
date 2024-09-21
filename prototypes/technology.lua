@@ -2134,7 +2134,6 @@ if mods["deadlock-beltboxes-loaders"] then
         },
         time = 60
       },
-      max_level = "infinite",
       upgrade = true,
       order = "c-k-f-e"
     },
