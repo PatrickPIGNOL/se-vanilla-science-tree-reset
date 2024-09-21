@@ -1949,17 +1949,7 @@ local vTechnologies = {
     }
 };
 
-function mSetTechnology(pTechnology)
-    data.raw.technology[pTechnology.name] = pTechnology;
-end
-
-if settings.startup["SE-vanilla-science-tree-reset-activated"].value then
-    for vIndex, vTechnology in ipairs(vTechnologies) 
-    do
-        mSetTechnology(vTechnology);
-    end
-end
-
+--[[ 
 if mods["deadlock-beltboxes-loaders"] then
   local vLogisiticsTechnologies = {
     {
@@ -2259,8 +2249,19 @@ if mods["deadlock-beltboxes-loaders"] then
       },
       order = "a-d-d"
     }
-  }
+  } 
+]]
 
+function mSetTechnology(pTechnology)
+    data.raw.technology[pTechnology.name] = pTechnology;
+end
+
+if settings.startup["SE-vanilla-science-tree-reset-activated"].value then
+    for vIndex, vTechnology in ipairs(vTechnologies) 
+    do
+        mSetTechnology(vTechnology);
+    end
+end
 
 for vIndex, vLogisiticsTechnology in ipairs(vLogisiticsTechnologies) 
   do
