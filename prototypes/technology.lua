@@ -1838,297 +1838,6 @@ local vTechnologies = {
     },
     {
       type = "technology",
-      name = "circuit-network",
-      icon_size = 256, icon_mipmaps = 4,
-      icon = "__base__/graphics/technology/circuit-network.png",
-      effects =
-      {
-        {
-          type = "unlock-recipe",
-          recipe = "red-wire"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "green-wire"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "arithmetic-combinator"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "decider-combinator"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "constant-combinator"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "power-switch"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "programmable-speaker"
-        }
-      },
-      prerequisites = {"electronics", "logistic-science-pack"},
-      unit =
-      {
-        count = 100,
-        ingredients =
-        {
-          {"automation-science-pack", 1},
-          {"logistic-science-pack", 1}
-        },
-        time = 15
-      },
-      order = "a-d-d"
-    },
-    {
-      type = "technology",
-      name = "artillery-shell-range-1",
-      icon_size = 256, icon_mipmaps = 4,
-      icons = util.technology_icon_constant_range("__base__/graphics/technology/artillery-range.png"),
-      effects =
-      {
-        {
-          type = "artillery-range",
-          modifier = 0.3
-        }
-      },
-      prerequisites = {"artillery", "space-science-pack"},
-      unit =
-      {
-        count_formula = "2^L*1000",
-        ingredients =
-        {
-          {"automation-science-pack", 1},
-          {"logistic-science-pack", 1},
-          {"chemical-science-pack", 1},
-          {"military-science-pack", 1},
-          {"utility-science-pack", 1},
-          {"space-science-pack", 1}
-        },
-        time = 60
-      },
-      order = "e-k-d"
-    },
-    {
-      type = "technology",
-      name = "artillery-shell-speed-1",
-      icon_size = 256, icon_mipmaps = 4,
-      icons = util.technology_icon_constant_speed("__base__/graphics/technology/artillery-speed.png"),
-      effects =
-      {
-        {
-          type = "gun-speed",
-          ammo_category = "artillery-shell",
-          icon = "__base__/graphics/icons/artillery-shell.png",
-          icon_size = 64,
-          icon_mipmaps = 2,
-          modifier = 1
-        }
-      },
-      prerequisites = {"artillery", "space-science-pack"},
-      unit =
-      {
-        count_formula = "1000+3^(L-1)*1000",
-        ingredients =
-        {
-          {"automation-science-pack", 1},
-          {"logistic-science-pack", 1},
-          {"chemical-science-pack", 1},
-          {"military-science-pack", 1},
-          {"utility-science-pack", 1},
-          {"space-science-pack", 1}
-        },
-        time = 60
-      },
-      order = "e-k-k"
-    }
-};
-
---[[ 
-if mods["deadlock-beltboxes-loaders"] then
-  local vLogisiticsTechnologies = {
-    {
-      type = "technology",
-      name = "logistics",
-      icon_size = 256, icon_mipmaps = 4,
-      icon = "__base__/graphics/technology/logistics-1.png",
-      effects =
-      {
-        {
-          type = "unlock-recipe",
-          recipe = "underground-belt"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "splitter"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "loader"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "transport-belt-loader"
-        }
-      },
-      unit =
-      {
-        count = 20,
-        ingredients = {{"automation-science-pack", 1}},
-        time = 15
-      },
-      order = "a-f-a"
-    },
-    {
-      type = "technology",
-      name = "logistics-2",
-      icon_size = 256, icon_mipmaps = 4,
-      icon = "__base__/graphics/technology/logistics-2.png",
-      effects =
-      {
-        {
-          type = "unlock-recipe",
-          recipe = "fast-transport-belt"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "fast-underground-belt"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "fast-splitter"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "fast-loader"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "fast-transport-belt-loader"
-        }
-      },
-      prerequisites = {"logistics", "logistic-science-pack"},
-      unit =
-      {
-        count = 200,
-        ingredients =
-        {
-          {"automation-science-pack", 1},
-          {"logistic-science-pack", 1}
-        },
-        time = 30
-      },
-      order = "a-f-b"
-    }, 
-    {
-      type = "technology",
-      name = "logistics-3",
-      icon_size = 256, icon_mipmaps = 4,
-      icon = "__base__/graphics/technology/logistics-3.png",
-      effects =
-      {
-        {
-          type = "unlock-recipe",
-          recipe = "express-transport-belt"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "express-underground-belt"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "express-splitter"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "express-loader"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "express-transport-belt-loader"
-        }  
-      },
-      prerequisites = {"production-science-pack", "lubricant"},
-      unit =
-      {
-        count = 300,
-        ingredients =
-        {
-          {"automation-science-pack", 1},
-          {"logistic-science-pack", 1},
-          {"chemical-science-pack", 1},
-          {"production-science-pack", 1}
-        },
-        time = 15
-      },
-      order = "a-f-c"
-    },
-    {
-      type = "technology",
-      name = "mining-productivity-3",
-      icon_size = 256, icon_mipmaps = 4,
-      icons = util.technology_icon_constant_productivity("__base__/graphics/technology/mining-productivity.png"),
-      effects =
-      {
-        {
-          type = "mining-drill-productivity-bonus",
-          modifier = 0.1
-        }
-      },
-      prerequisites = {"mining-productivity-2"},
-      unit =
-      {
-        count = 1000,
-        ingredients =
-        {
-          {"automation-science-pack", 1},
-          {"logistic-science-pack", 1},
-          {"chemical-science-pack", 1},
-          {"production-science-pack", 1},
-          {"utility-science-pack", 1}
-        },
-        time = 60
-      },
-      upgrade = true,
-      order = "c-k-f-e"
-    },
-    {
-      type = "technology",
-      name = "mining-productivity-4",
-      icon_size = 256, icon_mipmaps = 4,
-      icons = util.technology_icon_constant_productivity("__base__/graphics/technology/mining-productivity.png"),
-      effects =
-      {
-        {
-          type = "mining-drill-productivity-bonus",
-          modifier = 0.1
-        }
-      },
-      prerequisites = {"mining-productivity-3", "space-science-pack"},
-      unit =
-      {
-        count_formula = "2500*(L - 3)",
-        ingredients =
-        {
-          {"automation-science-pack", 1},
-          {"logistic-science-pack", 1},
-          {"chemical-science-pack", 1},
-          {"production-science-pack", 1},
-          {"utility-science-pack", 1},
-          {"space-science-pack", 1}
-        },
-        time = 60
-      },
-      upgrade = true,
-      order = "c-k-f-e"
-    },
-    {
-      type = "technology",
       name = "artillery",
       icon_size = 256, icon_mipmaps = 4,
       icon = "__base__/graphics/technology/artillery.png",
@@ -2248,15 +1957,70 @@ if mods["deadlock-beltboxes-loaders"] then
         time = 15
       },
       order = "a-d-d"
+    },
+    {
+      type = "technology",
+      name = "artillery-shell-range-1",
+      icon_size = 256, icon_mipmaps = 4,
+      icons = util.technology_icon_constant_range("__base__/graphics/technology/artillery-range.png"),
+      effects =
+      {
+        {
+          type = "artillery-range",
+          modifier = 0.3
+        }
+      },
+      prerequisites = {"artillery", "space-science-pack"},
+      unit =
+      {
+        count_formula = "2^L*1000",
+        ingredients =
+        {
+          {"automation-science-pack", 1},
+          {"logistic-science-pack", 1},
+          {"chemical-science-pack", 1},
+          {"military-science-pack", 1},
+          {"utility-science-pack", 1},
+          {"space-science-pack", 1}
+        },
+        time = 60
+      },
+      order = "e-k-d"
+    },
+    {
+      type = "technology",
+      name = "artillery-shell-speed-1",
+      icon_size = 256, icon_mipmaps = 4,
+      icons = util.technology_icon_constant_speed("__base__/graphics/technology/artillery-speed.png"),
+      effects =
+      {
+        {
+          type = "gun-speed",
+          ammo_category = "artillery-shell",
+          icon = "__base__/graphics/icons/artillery-shell.png",
+          icon_size = 64,
+          icon_mipmaps = 2,
+          modifier = 1
+        }
+      },
+      prerequisites = {"artillery", "space-science-pack"},
+      unit =
+      {
+        count_formula = "1000+3^(L-1)*1000",
+        ingredients =
+        {
+          {"automation-science-pack", 1},
+          {"logistic-science-pack", 1},
+          {"chemical-science-pack", 1},
+          {"military-science-pack", 1},
+          {"utility-science-pack", 1},
+          {"space-science-pack", 1}
+        },
+        time = 60
+      },
+      order = "e-k-k"
     }
-  } 
-  
-    for vIndex, vLogisiticsTechnology in ipairs(vLogisiticsTechnologies) 
-    do
-        mSetTechnology(vLogisiticsTechnology);
-    end
-end
-]]
+};
 
 function mSetTechnology(pTechnology)
     data.raw.technology[pTechnology.name] = pTechnology;
