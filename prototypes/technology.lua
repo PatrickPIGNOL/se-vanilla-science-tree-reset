@@ -85,7 +85,346 @@ local vTechnologies = {
     },
     order = "c-a"
   },
-  
+  {
+    type = "technology",
+    name = "worker-robots-speed-1",
+    icon_size = 256, icon_mipmaps = 4,
+    icons = util.technology_icon_constant_movement_speed("__base__/graphics/technology/worker-robots-speed.png"),
+    effects =
+    {
+      {
+        type = "worker-robot-speed",
+        modifier = 0.35
+      }
+    },
+    prerequisites = {"robotics"},
+    unit =
+    {
+      count = 50,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1}
+      },
+      time = 30
+    },
+    upgrade = true,
+    order = "c-k-f-a"
+  },
+  {
+    type = "technology",
+    name = "worker-robots-speed-2",
+    icon_size = 256, icon_mipmaps = 4,
+    icons = util.technology_icon_constant_movement_speed("__base__/graphics/technology/worker-robots-speed.png"),
+    effects =
+    {
+      {
+        type = "worker-robot-speed",
+        modifier = 0.4
+      }
+    },
+    prerequisites = {"worker-robots-speed-1"},
+    unit =
+    {
+      count = 100,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1}
+      },
+      time = 30
+    },
+    upgrade = true,
+    order = "c-k-f-b"
+  },
+  {
+    type = "technology",
+    name = "worker-robots-speed-3",
+    icon_size = 256, icon_mipmaps = 4,
+    icons = util.technology_icon_constant_movement_speed("__base__/graphics/technology/worker-robots-speed.png"),
+    effects =
+    {
+      {
+        type = "worker-robot-speed",
+        modifier = 0.45
+      }
+    },
+    prerequisites = {"worker-robots-speed-2"},
+    unit =
+    {
+      count = 150,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"utility-science-pack", 1}
+      },
+      time = 60
+    },
+    upgrade = true,
+    order = "c-k-f-c"
+  },
+  {
+    type = "technology",
+    name = "worker-robots-speed-4",
+    icon_size = 256, icon_mipmaps = 4,
+    icons = util.technology_icon_constant_movement_speed("__base__/graphics/technology/worker-robots-speed.png"),
+    effects =
+    {
+      {
+        type = "worker-robot-speed",
+        modifier = 0.55
+      }
+    },
+    prerequisites = {"worker-robots-speed-3"},
+    unit =
+    {
+      count = 250,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"utility-science-pack", 1}
+      },
+      time = 60
+    },
+    upgrade = true,
+    order = "c-k-f-d"
+  },
+  {
+    type = "technology",
+    name = "worker-robots-speed-5",
+    icon_size = 256, icon_mipmaps = 4,
+    icons = util.technology_icon_constant_movement_speed("__base__/graphics/technology/worker-robots-speed.png"),
+    effects =
+    {
+      {
+        type = "worker-robot-speed",
+        modifier = 0.65
+      }
+    },
+    prerequisites = {"worker-robots-speed-4"},
+    unit =
+    {
+      count = 500,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1},
+        {"utility-science-pack", 1}
+      },
+      time = 60
+    },
+    upgrade = true,
+    order = "c-k-f-e"
+  },
+  {
+    type = "technology",
+    name = "worker-robots-speed-6",
+    icon_size = 256, icon_mipmaps = 4,
+    icons = util.technology_icon_constant_movement_speed("__base__/graphics/technology/worker-robots-speed.png"),
+    effects =
+    {
+      {
+        type = "worker-robot-speed",
+        modifier = 0.65
+      }
+    },
+    prerequisites = {"worker-robots-speed-5", "space-science-pack"},
+    unit =
+    {
+      count_formula = "2^(L-6)*1000",
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1},
+        {"utility-science-pack", 1},
+        {"space-science-pack", 1}
+      },
+      time = 60
+    },
+    --max_level = "infinite",
+    upgrade = true,
+    order = "c-k-f-e"
+  },
+  {
+    type = "technology",
+    name = "worker-robots-speed-1",
+    icon_size = 256, icon_mipmaps = 4,
+    icons = util.technology_icon_constant_movement_speed("__base__/graphics/technology/worker-robots-speed.png"),
+    effects =
+    {
+      {
+        type = "worker-robot-speed",
+        modifier = 0.35
+      }
+    },
+    prerequisites = {"robotics"},
+    unit =
+    {
+      count = 50,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1}
+      },
+      time = 30
+    },
+    upgrade = true,
+    order = "c-k-f-a"
+  },
+  {
+    type = "technology",
+    name = "worker-robots-speed-2",
+    icon_size = 256, icon_mipmaps = 4,
+    icons = util.technology_icon_constant_movement_speed("__base__/graphics/technology/worker-robots-speed.png"),
+    effects =
+    {
+      {
+        type = "worker-robot-speed",
+        modifier = 0.4
+      }
+    },
+    prerequisites = {"worker-robots-speed-1"},
+    unit =
+    {
+      count = 100,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1}
+      },
+      time = 30
+    },
+    upgrade = true,
+    order = "c-k-f-b"
+  },
+  {
+    type = "technology",
+    name = "worker-robots-speed-3",
+    icon_size = 256, icon_mipmaps = 4,
+    icons = util.technology_icon_constant_movement_speed("__base__/graphics/technology/worker-robots-speed.png"),
+    effects =
+    {
+      {
+        type = "worker-robot-speed",
+        modifier = 0.45
+      }
+    },
+    prerequisites = {"worker-robots-speed-2"},
+    unit =
+    {
+      count = 150,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"utility-science-pack", 1}
+      },
+      time = 60
+    },
+    upgrade = true,
+    order = "c-k-f-c"
+  },
+  {
+    type = "technology",
+    name = "worker-robots-speed-4",
+    icon_size = 256, icon_mipmaps = 4,
+    icons = util.technology_icon_constant_movement_speed("__base__/graphics/technology/worker-robots-speed.png"),
+    effects =
+    {
+      {
+        type = "worker-robot-speed",
+        modifier = 0.55
+      }
+    },
+    prerequisites = {"worker-robots-speed-3"},
+    unit =
+    {
+      count = 250,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"utility-science-pack", 1}
+      },
+      time = 60
+    },
+    upgrade = true,
+    order = "c-k-f-d"
+  },
+  {
+    type = "technology",
+    name = "worker-robots-speed-5",
+    icon_size = 256, icon_mipmaps = 4,
+    icons = util.technology_icon_constant_movement_speed("__base__/graphics/technology/worker-robots-speed.png"),
+    effects =
+    {
+      {
+        type = "worker-robot-speed",
+        modifier = 0.65
+      }
+    },
+    prerequisites = {"worker-robots-speed-4"},
+    unit =
+    {
+      count = 500,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1},
+        {"utility-science-pack", 1}
+      },
+      time = 60
+    },
+    upgrade = true,
+    order = "c-k-f-e"
+  },
+  {
+    type = "technology",
+    name = "worker-robots-speed-6",
+    icon_size = 256, icon_mipmaps = 4,
+    icons = util.technology_icon_constant_movement_speed("__base__/graphics/technology/worker-robots-speed.png"),
+    effects =
+    {
+      {
+        type = "worker-robot-speed",
+        modifier = 0.65
+      }
+    },
+    prerequisites = {"worker-robots-speed-5", "space-science-pack"},
+    unit =
+    {
+      count_formula = "2^(L-6)*1000",
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1},
+        {"utility-science-pack", 1},
+        {"space-science-pack", 1}
+      },
+      time = 60
+    },
+    --max_level = "infinite",
+    upgrade = true,
+    order = "c-k-f-e"
+  },
   {
     type = "technology",
     name = "logistics-2",
@@ -428,6 +767,32 @@ local vTechnologies = {
       time = 30
     },
     order = "g-c-b"
+  },
+  {
+    type = "technology",
+    name = "energy-shield-equipment",
+    icon_size = 256, icon_mipmaps = 4,
+    icons = util.technology_icon_constant_equipment("__base__/graphics/technology/energy-shield-equipment.png"),
+    prerequisites = {"solar-panel-equipment", "military-science-pack"},
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "energy-shield-equipment"
+      }
+    },
+    unit =
+    {
+      count = 150,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"military-science-pack", 1}
+      },
+      time = 15
+    },
+    order = "g-e-a"
   },
   {
     type = "technology",
@@ -1309,6 +1674,31 @@ local vTechnologies = {
   },
   {
     type = "technology",
+    name = "toolbelt",
+    icon_size = 256, icon_mipmaps = 4,
+    icons = util.technology_icon_constant_capacity("__base__/graphics/technology/toolbelt.png"),
+    prerequisites = {"logistic-science-pack"},
+    effects =
+    {
+      {
+        type = "character-inventory-slots-bonus",
+        modifier = 10
+      }
+    },
+    unit =
+    {
+      count = 100,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1}
+      },
+      time = 30
+    },
+    order = "c-k-m"
+  },
+  {
+    type = "technology",
     name = "military-4",
     icon_size = 256, icon_mipmaps = 4,
     icon = "__base__/graphics/technology/military.png",
@@ -2019,7 +2409,72 @@ local vTechnologies = {
         time = 60
       },
       order = "e-k-k"
-    }
+    },
+    {
+      type = "technology",
+      name = "uranium-ammo",
+      icon_size = 256, icon_mipmaps = 4,
+      icon = "__base__/graphics/technology/uranium-ammo.png",
+      effects =
+      {
+        {
+          type = "unlock-recipe",
+          recipe = "uranium-rounds-magazine"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "uranium-cannon-shell"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "explosive-uranium-cannon-shell"
+        }
+      },
+      prerequisites = {"uranium-processing", "military-4", "tank"},
+      unit =
+      {
+        count = 1000,
+        ingredients =
+        {
+          {"automation-science-pack", 1},
+          {"logistic-science-pack", 1},
+          {"chemical-science-pack", 1},
+          {"military-science-pack", 1},
+          {"utility-science-pack", 1}
+        },
+        time = 45
+      },
+      order = "e-a-b"
+    },
+    {
+      type = "technology",
+      name = "atomic-bomb",
+      icon_size = 256, icon_mipmaps = 4,
+      icon = "__base__/graphics/technology/atomic-bomb.png",
+      effects =
+      {
+        {
+          type = "unlock-recipe",
+          recipe = "atomic-bomb"
+        }
+      },
+      prerequisites = {"military-4", "kovarex-enrichment-process", "rocket-control-unit", "rocketry"},
+      unit =
+      {
+        count = 5000,
+        ingredients =
+        {
+          {"automation-science-pack", 1},
+          {"logistic-science-pack", 1},
+          {"chemical-science-pack", 1},
+          {"military-science-pack", 1},
+          {"production-science-pack", 1},
+          {"utility-science-pack", 1}
+        },
+        time = 45
+      },
+      order = "e-a-b"
+    },
 };
 
 function mSetTechnology(pTechnology)
