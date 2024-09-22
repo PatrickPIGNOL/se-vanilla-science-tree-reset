@@ -2250,6 +2250,12 @@ if mods["deadlock-beltboxes-loaders"] then
       order = "a-d-d"
     }
   } 
+  
+    for vIndex, vLogisiticsTechnology in ipairs(vLogisiticsTechnologies) 
+    do
+        mSetTechnology(vLogisiticsTechnology);
+    end
+end
 ]]
 
 function mSetTechnology(pTechnology)
@@ -2261,10 +2267,4 @@ if settings.startup["SE-vanilla-science-tree-reset-activated"].value then
     do
         mSetTechnology(vTechnology);
     end
-end
-
-for vIndex, vLogisiticsTechnology in ipairs(vLogisiticsTechnologies) 
-  do
-      mSetTechnology(vLogisiticsTechnology);
-  end
 end
